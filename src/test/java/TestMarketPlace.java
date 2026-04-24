@@ -49,4 +49,13 @@ public class TestMarketPlace {
         when( myCar.sellingValue()).thenReturn(100.0);
         assertEquals(100, marketPlace.getPriceForAllCars());
     }
+
+    @Test
+    public void TestPricesForAllCars() {
+        assumeTrue(marketPlace != null);
+        marketPlace.addCar( new Car(2000, 45) );
+        marketPlace.addCar( new Car(2010, 50) );
+        marketPlace.addCar( new Car(2020, 55) );
+        assertEquals(2000, marketPlace.getPriceForAllCars());
+    }
 }
